@@ -14,4 +14,3 @@ class PostTestCase(TestCase):
         p1 = Post(title=expected)
         actual = str(p1)
         self.assertEqual(expected, actual)
-
