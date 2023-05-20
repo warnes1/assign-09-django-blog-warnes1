@@ -1,12 +1,14 @@
-# polling/views.py
+# 07-django-blog-warnes1/polling/views.py
 
 from django.shortcuts import render
 from django.http import Http404
 from polling.models import Poll
 
+
 def list_view(request):
     context = {'polls': Poll.objects.all()}
     return render(request, 'polling/list.html', context)
+
 
 def detail_view(request, poll_id):
     try:

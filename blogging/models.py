@@ -1,4 +1,4 @@
-mysite\blogging\models.py
+# \07-django-blog-warnes1\blogging\models.py
 
 from django.db import models
 from django.contrib.auth.models import User

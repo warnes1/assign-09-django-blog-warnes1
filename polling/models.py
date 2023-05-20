@@ -1,4 +1,4 @@
-# polling/models.py
+# \07-django-blog-warnes1\polling\models.py
 from django.db import models
 
 # Create your models here.
@@ -9,3 +9,4 @@ class Poll(models.Model):
     score = models.IntegerField(default=0)
 
     def __str__(self):
+        return self.title

@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polling',          # Added this
-    'blogging',         # Added this
+    'blogging'          # Added this
 ]
 
 MIDDLEWARE = [
