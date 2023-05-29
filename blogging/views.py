@@ -22,7 +22,7 @@ def stub_view(request, *args, **kwargs):
 class PostListView(ListView):
 #    model = Post
     context_object_name = 'post_list'
-    queryset = Post.objects.order_by('-published_date')
+    queryset = Post.objects.order_by('-published_date').exclude(published_date__isnull=True)
     template_name = 'blogging/list.html'
 
 
