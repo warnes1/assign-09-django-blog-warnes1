@@ -18,8 +18,11 @@ def stub_view(request, *args, **kwargs):
         body += "\n".join(["\t%s: %s" % b for b in kwargs.items()])
     return HttpResponse(body, content_type="text/plain")
 
+
 class PostListView(ListView):
-    model = Post
+#    model = Post
+    context_object_name = 'post_list'
+    queryset = Post.objects.order_by('-published_date')
     template_name = 'blogging/list.html'
 
 
