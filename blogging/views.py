@@ -7,6 +7,7 @@ from django.views.generic.detail import DetailView
 # Create your views here
 
 
+# No longer using, temporary use only
 def stub_view(request, *args, **kwargs):
     body = "Stub View\n\n"
     if args:
@@ -17,36 +18,12 @@ def stub_view(request, *args, **kwargs):
         body += "\n".join(["\t%s: %s" % b for b in kwargs.items()])
     return HttpResponse(body, content_type="text/plain")
 
-
-# def list_view(request):
-#    published = Post.objects.exclude(published_date__exact=None)
-#    posts = published.order_by('-published_date')
-#    template = loader.get_template('blogging/list.html')
-#    context = {'posts': posts}
-#    body = template.render(context)
-#    return HttpResponse(body, content_type="text/html")
-
- # The above re-written in a more compact form
-#def list_view(request):
-#    published = Post.objects.exclude(published_date__exact=None)
-#    posts = published.order_by('-published_date')
-#    context = {'posts': posts}
-#    return render(request, 'blogging/list.html', context)
-
 class PostListView(ListView):
     model = Post
     template_name = 'blogging/list.html'
 
 
-#def detail_view(request, post_id):
-#    published = Post.objects.exclude(published_date__exact=None)
-#    try:
-#        post = published.get(pk=post_id)
-#    except Post.DoesNotExist:
-#        raise Http404
-#    context = {'post': post}
-#    return render(request, 'blogging/detail.html', context)
-
 class PostDetailView(DetailView):
     model = Post
-    template_name = 'blogging/detail.html'
+    template_name = 'blogging' \
+                    '/detail.html'
