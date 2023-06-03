@@ -1,4 +1,4 @@
-Repository name: https://github.com/warnes1/07-django-blog-warnes1
+Repository name: https://github.com/warnes1/08-django-blog-warnes1
 
 (djangoenv)$ pip install Django==3.1.5
   Collecting Django
