@@ -1,25 +1,29 @@
-Repository name: https://github.com/warnes1/08-django-blog-warnes1
+Repository name: https://github.com/warnes1/09-django-blog-warnes1
 
-(djangoenv)$ pip install Django==3.1.5
-  Collecting Django
-    Downloading Django-2.1.1-py2.py3-none-any.whl (6.9MB)
-      100% |████████████████████████████████| 6.9MB 47kB/s
-  Installing collected packages: Django
-  Successfully installed django-2.1.1
-(djangobenv)$
+Lesson
+  Continuous Integration
+  Continuous Deployment
+  Setting up GitHub Actions
+  Code style enforcement
+  Automatic Heroku Deployment
 
-====== Then we started the `mysite` project and initialized our database:======
+Heroku
+  runtime.txt - specify version of python to use
+  procfile
 
-(djangoenv)$ django-admin startproject mysite
-(djangoenv)$ cd mysite
-(djangoenv)$ python manage.py runserver        # Load http://localhost:8000 and then shut the server
-                                               # down with CTRL-C when you're done looking at the
-                                               # welcome page.
-(djangoenv)$ python manage.py migrate
-(djangoenv)$ python manage.py createsuperuser  # Use `winpty python manage.py createsuperuser` if
-                                               # on Windows GitBash
-====== Finally, we created the `polling` app.======
+Generate requirements.txt file:
+  python -m pip freeze > requirements.txt
+  We need a requirements.txt  for heroku to know
+  which python modules need to be loaded
 
+Push the requirements.txt to github origin
+  git add requirements.txt
+  git commit -m "Adding requirements.txt"
+  git push origin
+    5ad740e..2b92133  dev -> dev
 
-(djangoenv)$ python manage.py startapp polling # Then add `polling` to INSTALLED_APPS in
-                                               # mysite/settings.py
+Now we will use "github actions" for continuous integration.
+  In the github repository select the 'Actions" tab, then select "Configure"
+  button for "Dajango - By GitHub Action - Build and Test a Django Project"
+  This will add a file to the repository called: .github/workflows/django.yml
+    
