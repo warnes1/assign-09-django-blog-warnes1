@@ -27,3 +27,5 @@ Now we will use "github actions" for continuous integration.
   button for "Dajango - By GitHub Action - Build and Test a Django Project"
   This will add a file to the repository called: .github/workflows/django.yml
     
+Now set things for heroku deployment:
+  python -m pip install psycopg2-binary whitenoise gunicorn dj-database-url
