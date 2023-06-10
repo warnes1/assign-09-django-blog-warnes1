@@ -1,4 +1,4 @@
-Repository name: https://github.com/warnes1/09-django-blog-warnes1
+Repository name: https://github.com/warnes1/assignment-09-django-blog-warnes1
 
 Lesson
   Continuous Integration
