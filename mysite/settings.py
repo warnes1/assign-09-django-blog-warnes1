@@ -17,6 +17,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 LOGIN_URL = "/login/"
+# Added for Assignment 09
 LOGIN_REDIRECT_URL = "/"
 
 
@@ -27,9 +28,9 @@ LOGIN_REDIRECT_URL = "/"
 SECRET_KEY = "django-insecure-@+lbne66qx=9e_s89r$*4r*%p!ctu0x-4^8y2urt$ziitz_4ed"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -41,6 +42,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",  # Added for Assignment 09
+
+    "allauth",  # Added for Assignment 09
+    "allauth.account",  # Added for Assignment 09
+    "allauth.socialaccount",  # Added for Assignment 09
+    "allauth.socialaccount.providers.github",  # Added for Assignment 09
+
     "polling",  # Added this
     "blogging",  # Added this
 ]
@@ -61,6 +69,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [os.path.join(BASE_DIR, "mysite/templates")],
+#        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -74,7 +83,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "mysite.wsgi.application"
-
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -127,3 +135,13 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Added for Assignment 09
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+# Added for Assignment 09
+SITE_ID = 1
+# Added for Assignment 09
+ACCOUNT_EMAIL_VERIFICATION = 'none'

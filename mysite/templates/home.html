@@ -1,0 +1,19 @@
+<!--
+File name: mysite/templates/home.html
+Purpose:
+- display home page
+
+Load socialaccount from django-allauth
+and then display a message to the user, if logged in?
+Otherwise, provide link to login with Github
+-->
+
+<!-- templates/home.html -->
+{% load socialaccount %}
+
+<h1>Scott's Cool Blog</h1>
+{% if user.is_authenticated %}
+<p>Welcome {{ user.username.title }} !!!</p>
+{% else %}
+<a href="{% provider_login_url 'github' %}">Sign Up</a>
+{% endif %}
