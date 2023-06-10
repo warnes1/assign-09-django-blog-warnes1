@@ -1,4 +1,5 @@
-Repository name: https://github.com/warnes1/assignment-09-django-blog-warnes1
+Repository name: https://github.com/warnes1/assign-09-django-blog-warnes1
+Heroku Website:  https://assign-09-django-blog-warnes1.herokuapp.com/
 
 Lesson
   Continuous Integration
@@ -20,7 +21,6 @@ Push the requirements.txt to github origin
   git add requirements.txt
   git commit -m "Adding requirements.txt"
   git push origin
-    5ad740e..2b92133  dev -> dev
 
 Now we will use "github actions" for continuous integration.
   In the github repository select the 'Actions" tab, then select "Configure"
@@ -29,3 +29,11 @@ Now we will use "github actions" for continuous integration.
     
 Now set things for heroku deployment:
   python -m pip install psycopg2-binary whitenoise gunicorn dj-database-url
+
+> git remote -v
+heroku  https://git.heroku.com/assign-09-django-blog-warnes1.git (fetch)
+heroku  https://git.heroku.com/assign-09-django-blog-warnes1.git (push)
+origin  https://github.com/warnes1/assignment-09-django-blog-warnes1 (fetch)
+origin  https://github.com/warnes1/assignment-09-django-blog-warnes1 (push)
+(djangovenv) PS C:\Users\warne\PycharmProjects\assign-09-django-blog-warnes1>
+
