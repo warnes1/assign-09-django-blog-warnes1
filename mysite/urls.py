@@ -31,7 +31,6 @@ urlpatterns = [
 # was causing an error about access to 127.0.0.1
 #   path("login/", LoginView.as_view(template_name="login.html"), name="login"),
     path("logout/", LogoutView.as_view(next_page="/"), name="logout"),
-    # path("", Home.as_view(), name="home"),
     path("", Home.as_view(), name="home"),
 ]
 # 21da26e61303a9d25de5 Client ID for GIT
